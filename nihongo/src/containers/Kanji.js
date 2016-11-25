@@ -33,6 +33,7 @@ export default class Kanji extends Component {
 	render() {
 		return (
 			<View style={ styles.container }>
+
 				<TouchableHighlight
 						style={styles.button}
 						underlayColor='#faebd7'

@@ -4,8 +4,11 @@ import {
 	Text,
 	View,
 	StyleSheet,
-	TouchableHighlight
+	TouchableHighlight,
+	AlertIOS
 } from 'react-native';
+
+import { Actions } from 'react-native-router-flux';
 
 const styles = StyleSheet.create({
 	container: {
@@ -42,8 +45,6 @@ const styles = StyleSheet.create({
 		fontSize: 200
 	},
 
-
-
 	bottomBar: {
 
 		flex: 1,
@@ -67,6 +68,18 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 		backgroundColor: 'pink'
+	},
+	// card opened
+	cardTitle: {
+		fontSize: 45,
+		textAlign: 'center'
+	},
+	cardFurigana: {
+		fontSize: 20
+	},
+	cardExample: {
+		fontSize: 20,
+		padding: 5
 	}
 });
 
@@ -78,7 +91,8 @@ export default class FlashCard extends Component {
 
 		this.state = {
 			kanji: {},
-			flip: false
+			flip: false,
+			examples: {}
 		}
 
 		this.current = -1;
@@ -88,13 +102,25 @@ export default class FlashCard extends Component {
 	next() {
 		// Has reached maximum question
 		if (this.current >= this.props.dataSource.length - 1) {
+			// show alert
+			AlertIOS.alert(
+			 'Kết thúc bài học',
+			 null,
+			 [
+			   {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+			   {text: 'Kết thúc', onPress: () => {
+			   	Actions.kanji
+			   }},
+			 ],
+			);
 			return;
 		}
 
 		this.setState({
-			kanji: this.props.dataSource[++this.current]
+			kanji: this.props.dataSource[++this.current],
+			flip: false
 		});
-		// this.current += this.current < this.props.dataSource.length - 1 ? 1 : 0;
+
 	}
 
 	back() {
@@ -104,7 +130,8 @@ export default class FlashCard extends Component {
 		}
 
 		this.setState({
-			kanji: this.props.dataSource[--this.current]
+			kanji: this.props.dataSource[--this.current],
+			flip: false
 		});
 	}
 
@@ -116,22 +143,42 @@ export default class FlashCard extends Component {
 
 	renderCard() {
 		// card is in close state
-		if (this.state.flip) {
+		if (!this.state.flip) {
 			return (
 				<Text style={styles.kanjiText} >
-							{this.state.kanji.kanji}
+					{this.state.kanji.kanji}
 				</Text>
 			);
 		}
 		// card is opened
 		else {
+
 			return (
-				<Text style={styles.kanjiText} >
-					O
-				</Text>
+				<View>
+					<Text style={styles.cardTitle} >
+						{this.state.kanji.kanji}
+					</Text>
+					<Text style={styles.cardFurigana} >
+						{this.state.kanji.hiragana} ({this.state.kanji.romaji})
+					</Text>
+
+					{
+						this.state.kanji.Example.map((example) => {
+							return (
+								<Text style={styles.cardExample} >
+									- {example.text}
+								</Text>
+							)
+						})
+
+					}
+
+				</View>
 			);
 		}
 	}
+
+
 
 	componentDidMount() {
 		this.next();
@@ -143,7 +190,7 @@ export default class FlashCard extends Component {
 			<View style={ styles.container }>
 				<View style={styles.headerBar}>
 					<Text style={styles.questionText}>
-						{this.current + 1} / {this.props.dataSource.length}
+						Câu số {this.current + 1} / {this.props.dataSource.length}
 					</Text>
 				</View>
 
@@ -155,11 +202,11 @@ export default class FlashCard extends Component {
 				<View style={styles.bottomBar}>
 					<TouchableHighlight style={styles.backButton}
 						onPress={this.back.bind(this)}	>
-						<Text>Back</Text>
+						<Text>Trở lại</Text>
 					</TouchableHighlight>
 					<TouchableHighlight style={styles.nextButton}
 						onPress={this.next.bind(this)}	>
-						<Text>Next</Text>
+						<Text>Tiếp</Text>
 					</TouchableHighlight>
 
 				</View>
