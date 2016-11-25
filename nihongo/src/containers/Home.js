@@ -22,9 +22,10 @@ const styles = StyleSheet.create({
 		height: 50,
 		marginLeft: 10,
 		padding: 10,
-		backgroundColor: 'pink',
+		backgroundColor: '#FAC7C8',
+		borderColor: '#FF6960',
 		justifyContent: 'center',
-
+		borderWidth: 1.0,
 		borderRadius: 10,
 		flex: 1
 	},
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
 		width: 50,
 		height: 50,
 		borderRadius: 25,
-
+		fontWeight:'800',
 		backgroundColor: 'red',
 		alignItems: 'center',
 		justifyContent: 'center'
@@ -46,7 +47,7 @@ export default class Home extends Component {
 				<View style={styles.row}>
 					<View style={styles.title}><Text style={{fontSize: 30, color: 'white'}}>字</Text></View>
 					<TouchableHighlight
-							underlayColor="pink"
+							underlayColor='#FAB3C8'
 							style={styles.button}
 							onPress={ Actions.kanji }>
 						<Text>
@@ -58,7 +59,7 @@ export default class Home extends Component {
 				<View style={styles.row}>
 					<View style={styles.title}><Text style={{fontSize: 30, color: 'white'}}>受</Text></View>
 					<TouchableHighlight
-							underlayColor="pink"
+							underlayColor='#FAB3C8'
 							style={styles.button}
 							onPress={ Actions.kanji }>
 						<Text>
@@ -70,7 +71,7 @@ export default class Home extends Component {
 				<View style={styles.row}>
 					<View style={styles.title}><Text style={{fontSize: 30, color: 'white'}}>上</Text></View>
 					<TouchableHighlight
-							underlayColor="pink"
+							underlayColor='#FAB3C8'
 							style={styles.button}
 							onPress={ Actions.kanji }>
 						<Text>
@@ -82,7 +83,7 @@ export default class Home extends Component {
 				<View style={styles.row}>
 					<View style={styles.title}><Text style={{fontSize: 30, color: 'white'}}>設</Text></View>
 					<TouchableHighlight
-							underlayColor="pink"
+							underlayColor='#FAB3C8'
 							style={styles.button}
 							onPress={ Actions.kanji }>
 						<Text>
