@@ -10,6 +10,8 @@ import {
 
 import { Actions } from 'react-native-router-flux';
 
+import FlipCard from 'react-native-flip-card';
+
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
@@ -92,7 +94,7 @@ export default class FlashCard extends Component {
 		this.state = {
 			kanji: {},
 			flip: false,
-			examples: {}
+			examples: []
 		}
 
 		this.current = -1;
@@ -118,7 +120,8 @@ export default class FlashCard extends Component {
 
 		this.setState({
 			kanji: this.props.dataSource[++this.current],
-			flip: false
+			flip: false,
+			examples: this.props.dataSource[this.current].Example
 		});
 
 	}
@@ -131,7 +134,8 @@ export default class FlashCard extends Component {
 
 		this.setState({
 			kanji: this.props.dataSource[--this.current],
-			flip: false
+			flip: false,
+			examples: this.props.dataSource[this.current].Example
 		});
 	}
 
@@ -142,40 +146,126 @@ export default class FlashCard extends Component {
 	}
 
 	renderCard() {
-		// card is in close state
-		if (!this.state.flip) {
-			return (
-				<Text style={styles.kanjiText} >
-					{this.state.kanji.kanji}
-				</Text>
-			);
-		}
-		// card is opened
-		else {
+		// // card is in close state
+		// if (!this.state.flip) {
+		// 	return (
+		// 		<Text style={styles.kanjiText} >
+		// 			{this.state.kanji.kanji}
+		// 		</Text>
+		// 	);
+		// }
+		// // card is opened
+		// else {
 
-			return (
-				<View>
-					<Text style={styles.cardTitle} >
-						{this.state.kanji.kanji}
-					</Text>
-					<Text style={styles.cardFurigana} >
-						{this.state.kanji.hiragana} ({this.state.kanji.romaji})
-					</Text>
+		// 	return (
+		// 		<View>
+		// 			<Text style={styles.cardTitle} >
+		// 				{this.state.kanji.kanji}
+		// 			</Text>
+		// 			<Text style={styles.cardFurigana} >
+		// 				{this.state.kanji.hiragana} ({this.state.kanji.romaji})
+		// 			</Text>
 
-					{
-						this.state.kanji.Example.map((example) => {
-							return (
-								<Text style={styles.cardExample} >
-									- {example.text}
+		// 			{
+		// 				this.state.kanji.Example.map((example) => {
+		// 					return (
+		// 						<Text style={styles.cardExample} >
+		// 							- {example.text}
+		// 						</Text>
+		// 					)
+		// 				})
+
+		// 			}
+
+		// 		</View>
+		// 	);
+		// }
+		//
+		console.log(this.state.examples);
+
+
+ return <FlipCard onPress={this.flipCard.bind(this)}
+              flip={this.state.flip}
+              friction={6}
+              perspective={1000}
+              flipHorizontal={true}
+              flipVertical={false}
+              clickable={true}
+              style={styles.kanjiBox}
+              alignHeight={true}
+              // alignWidth={true}
+
+              onFlipped={(isFlipped)=>{console.log('isFlipped', isFlipped)}}
+            >
+              {/* Face Side */}
+              <View style={styles.face}>
+                <Text style={styles.kanjiText} >
+								 {this.state.kanji.kanji}
 								</Text>
-							)
-						})
+              </View>
+              {/* Back Side */}
+              <View style={styles.back}>
+                <Text style={styles.cardTitle} >
+						 				{this.state.kanji.kanji}
+						 			</Text>
+						 			<Text style={styles.cardFurigana} >
+						 				{this.state.kanji.hiragana} ({this.state.kanji.romaji})
+						 			</Text>
+								{
+										this.state.examples.map((example) => {
+											return (
+												<Text style={styles.cardExample} >
+													- {example.text}
+												</Text>
+											)
+										})
+									}
 
-					}
 
-				</View>
-			);
-		}
+              </View>
+
+            </FlipCard>
+
+		// return (
+		// 	<FlipCard
+	 //              flip={this.state.flip}
+	 //              friction={6}
+	 //              perspective={1000}
+	 //              flipHorizontal={true}
+	 //              flipVertical={false}
+	 //              clickable={true}
+
+	 //              alignHeight={true}>
+
+	 //      <View>
+	 //      	<Text style={styles.kanjiText} >
+		// 				{this.state.kanji.kanji}
+		// 			</Text>
+	 //      </View>
+
+	 //     	<View>
+		// 				<Text style={styles.cardTitle} >
+		// 					{this.state.kanji.kanji}
+		// 				</Text>
+		// 				<Text style={styles.cardFurigana} >
+		// 					{this.state.kanji.hiragana} ({this.state.kanji.romaji})
+		// 				</Text>
+
+		// 				{
+		// 					this.state.kanji.Example.map((example) => {
+		// 						return (
+		// 							<Text style={styles.cardExample} >
+		// 								- {example.text}
+		// 							</Text>
+		// 						)
+		// 					})
+
+		// 				}
+
+		// 			</View>
+
+	 //    </FlipCard>
+  //   )
 	}
 
 	componentDidMount() {
@@ -190,10 +280,9 @@ export default class FlashCard extends Component {
 						Câu số {this.current + 1} / {this.props.dataSource.length}
 					</Text>
 				</View>
-				<TouchableHighlight underlayColor='#4d4d4f' style={styles.kanjiBox}
-					onPress={this.flipCard.bind(this)} >
+
 					{this.renderCard()}
-				</TouchableHighlight>
+
 
 				<View style={styles.bottomBar}>
 					<TouchableHighlight style={styles.backButton}
