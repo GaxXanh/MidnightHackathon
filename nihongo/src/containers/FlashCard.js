@@ -42,6 +42,8 @@ const styles = StyleSheet.create({
 		fontSize: 200
 	},
 
+
+
 	bottomBar: {
 
 		flex: 1,
@@ -70,24 +72,93 @@ const styles = StyleSheet.create({
 
 
 export default class FlashCard extends Component {
+
+	constructor(props) {
+	  super(props);
+
+		this.state = {
+			kanji: {},
+			flip: false
+		}
+
+		this.current = -1;
+
+	}
+
+	next() {
+		// Has reached maximum question
+		if (this.current >= this.props.dataSource.length - 1) {
+			return;
+		}
+
+		this.setState({
+			kanji: this.props.dataSource[++this.current]
+		});
+		// this.current += this.current < this.props.dataSource.length - 1 ? 1 : 0;
+	}
+
+	back() {
+		// Has reached minimum question
+		if (this.current <= 0) {
+			return;
+		}
+
+		this.setState({
+			kanji: this.props.dataSource[--this.current]
+		});
+	}
+
+	flipCard() {
+		this.setState({
+			flip: !this.state.flip
+		});
+	}
+
+	renderCard() {
+		// card is in close state
+		if (this.state.flip) {
+			return (
+				<Text style={styles.kanjiText} >
+							{this.state.kanji.kanji}
+				</Text>
+			);
+		}
+		// card is opened
+		else {
+			return (
+				<Text style={styles.kanjiText} >
+					O
+				</Text>
+			);
+		}
+	}
+
+	componentDidMount() {
+		this.next();
+	}
+
 	render() {
+
 		return (
 			<View style={ styles.container }>
 				<View style={styles.headerBar}>
-					<Text style={styles.questionText}>2/50</Text>
-				</View>
-
-				<View style={styles.kanjiBox}>
-					<Text style={styles.kanjiText} >
-						本
+					<Text style={styles.questionText}>
+						{this.current + 1} / {this.props.dataSource.length}
 					</Text>
 				</View>
 
+				<TouchableHighlight underlayColor='#4d4d4f' style={styles.kanjiBox}
+					onPress={this.flipCard.bind(this)} >
+					{this.renderCard()}
+				</TouchableHighlight>
+
 				<View style={styles.bottomBar}>
-					<TouchableHighlight style={styles.backButton}>
+					<TouchableHighlight style={styles.backButton}
+						onPress={this.back.bind(this)}	>
 						<Text>Back</Text>
 					</TouchableHighlight>
-					<TouchableHighlight style={styles.nextButton}>
+					<TouchableHighlight style={styles.nextButton}
+						onPress={this.next.bind(this)}	>
 						<Text>Next</Text>
 					</TouchableHighlight>
 
