@@ -7,6 +7,12 @@ import {
 	View
 } from 'react-native';
 
+/* import router */
+import { Scene, Router, Actions } from 'react-native-router-flux';
+
+/* App's Components */
+import Home from './components/Home';
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -26,22 +32,17 @@ const styles = StyleSheet.create({
   },
 });
 
+const scenes = Actions.create(
+  <Scene key="root">
+          <Scene key="home" component={Home} title="React de Nihongo" />
+  </Scene>
+);
+
 export default class Main extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+      <Router scenes={scenes} />
     );
   }
 }
