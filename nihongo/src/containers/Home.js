@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import {
 	Text,
-	TouchableHighlight
+	TouchableHighlight,
+	StyleSheet
 } from 'react-native';
 
 import { Actions } from 'react-native-router-flux';
+
+const styles = StyleSheet.create({
+
+});
 
 export default class Home extends Component {
 	render() {
