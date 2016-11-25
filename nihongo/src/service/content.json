@@ -4,7 +4,8 @@
              "description":"a wedding ceremony, a wedding",
              "romaji":"kyoshiki",
              "hiragana": "きょしき",
-             "Example" : [{
+             "Example" : [
+                {
                 "text": "挙式はいつですか",
                 "translate": "When is your wedding ceremony?"
              },{

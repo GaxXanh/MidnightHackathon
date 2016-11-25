@@ -91,6 +91,7 @@ export default class Home extends Component {
 					</TouchableHighlight>
 				</View>
 
+				<View style={{flex:3}}></View>
 			</View>
 		);
 	}

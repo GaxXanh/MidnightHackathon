@@ -29,7 +29,8 @@ export default class Kanji extends Component {
 		return (
 			<View style={ styles.container }>
 				<TouchableHighlight style={styles.button}
-						onPress={Actions.flash}	>
+						onPress={Actions.flash}
+						 >
 					<Text>
 						Cơ bản
 					</Text>
