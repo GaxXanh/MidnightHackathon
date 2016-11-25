@@ -32,21 +32,30 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+	navBar: {
+		backgroundColor:'#ED1E29'
+	},
+	navBarTitle:{
+    color:'#FFFFFF',
+		fontWeight: '700'
+	},
+	barButtonIconStyle:{
+    tintColor:'rgb(255,255,255)'
+	}
 });
 
 const scenes = Actions.create(
   <Scene key="root">
     <Scene key="home" component={Home} title="React de Nihongo" initial={true} />
-    <Scene key="kanji" component={Kanji} title="Reactで「日本語」"/>
+    <Scene key="kanji" component={Kanji} title="Reactで「日本語」" backgroundColor="red"/>
     <Scene key="flash" component={FlashCard} title="Flash Card" />
   </Scene>
-);
+); backgroundColor="red"
 
 export default class Main extends Component {
-
   render() {
     return (
-      <Router scenes={scenes} />
+      <Router scenes={scenes} navigationBarStyle={styles.navBar} titleStyle={styles.navBarTitle} barButtonIconStyle={styles.barButtonIconStyle}/>
     );
   }
 }
