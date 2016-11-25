@@ -6,7 +6,7 @@ import {
 	StyleSheet,
 	TouchableHighlight
 } from 'react-native';
-import ButtonComponent from 'react-native-button-component';
+
 import { Actions } from 'react-native-router-flux';
 
 const backgroundColor = ['#212122', '#414141'];
