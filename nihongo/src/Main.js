@@ -35,7 +35,8 @@ const styles = StyleSheet.create({
 
 const scenes = Actions.create(
   <Scene key="root">
-    <Scene key="home" component={Home} title="React de Nihongo" initial={true} />
+    <Scene key="home" component={Home} title="Home" initial={true} />
+    <Scene key="kanji" component={Kanji} title="Kanji" />
   </Scene>
 );
 

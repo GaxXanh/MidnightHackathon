@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import {
-	Text
+	Text,
+	TouchableHighlight
 } from 'react-native';
 
+import { Actions } from 'react-native-router-flux';
 
 export default class Home extends Component {
 	render() {
 		return (
-			<Text>
-				Hello
-			</Text>
+			<TouchableHighlight
+					onPress={ Actions.kanji }>
+				<Text style={{ marginTop: 80 }}>
+					Học Kanji
+				</Text>
+			</TouchableHighlight>
 		);
 	}
 }
