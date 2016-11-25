@@ -11,8 +11,9 @@ import {
 import { Scene, Router, Actions } from 'react-native-router-flux';
 
 /* App's Components */
-import Home from './components/Home';
-import Kanji from './components/Kanji';
+import Home from './containers/Home';
+import Kanji from './containers/Kanji';
+import FlashCard from './containers/FlashCard';
 
 const styles = StyleSheet.create({
   container: {
@@ -35,8 +36,11 @@ const styles = StyleSheet.create({
 
 const scenes = Actions.create(
   <Scene key="root">
-    <Scene key="home" component={Home} title="Home" initial={true} />
-    <Scene key="kanji" component={Kanji} title="Kanji" />
+    <Scene key="home" component={Home} title="React de Nihongo" initial={true} />
+    <Scene key="kanji" component={Kanji} />
+    <Scene key="flash" component={FlashCard} title="Flash Card" />
+
+
   </Scene>
 );
 
