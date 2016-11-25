@@ -1,21 +1,15 @@
 import React, { Component } from 'react';
-
 import {
-	Text,
-	View,
-	TouchableHighlight
+	Text
 } from 'react-native';
-
-import { Actions } from 'react-native-router-flux';
-
 
 
 export default class Home extends Component {
 	render() {
 		return (
-			<View style={{margin: 128}}>
-				<Text onPress={Actions.kanji}>Home</Text>
-			</View>
+			<Text>
+				Hello
+			</Text>
 		);
 	}
 }
