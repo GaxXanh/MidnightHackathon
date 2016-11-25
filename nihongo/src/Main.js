@@ -44,37 +44,7 @@ const styles = StyleSheet.create({
 	}
 });
 
-const KANJI_LIST = [
-    {
-             "kanji":"挙",
-             "description":"a wedding ceremony, a wedding",
-             "romaji":"kyoshiki",
-             "hiragana": "きょしき",
-             "Example" : [{
-                "text": "挙式はいつですか",
-                "translate": "When is your wedding ceremony?"
-             },{
-                "text": "教会で挙式の予定です",
-                "translate": "Our wedding will be held in church."
-             }]
-
-     },
-     {
-             "kanji":"式",
-             "description":"a wedding ceremony, a wedding",
-             "romaji":"kyoshiki",
-             "hiragana": "きょしき",
-             "Example" : [{
-                "text": "挙式はいつですか",
-                "translate": "When is your wedding ceremony?"
-             },{
-                "text": "教会で挙式の予定です",
-                "translate": "Our wedding will be held in church."
-             }]
-
-     }
-
-]
+const KANJI_LIST = require('./service/content.json');
 
 const scenes = Actions.create(
   <Scene key="root">
