@@ -109,7 +109,7 @@ export default class FlashCard extends Component {
 			 [
 			   {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
 			   {text: 'Kết thúc', onPress: () => {
-			   	Actions.kanji
+			   	Actions.pop();
 			   }},
 			 ],
 			);
@@ -178,14 +178,11 @@ export default class FlashCard extends Component {
 		}
 	}
 
-
-
 	componentDidMount() {
 		this.next();
 	}
 
 	render() {
-
 		return (
 			<View style={ styles.container }>
 				<View style={styles.headerBar}>
@@ -193,7 +190,6 @@ export default class FlashCard extends Component {
 						Câu số {this.current + 1} / {this.props.dataSource.length}
 					</Text>
 				</View>
-
 				<TouchableHighlight underlayColor='#4d4d4f' style={styles.kanjiBox}
 					onPress={this.flipCard.bind(this)} >
 					{this.renderCard()}
@@ -208,11 +204,8 @@ export default class FlashCard extends Component {
 						onPress={this.next.bind(this)}	>
 						<Text>Tiếp</Text>
 					</TouchableHighlight>
-
 				</View>
 			</View>
-
-
 		);
 	}
 }

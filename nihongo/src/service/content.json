@@ -15,7 +15,7 @@
 
      },
      {
-             "kanji":"挙",
+             "kanji":"時",
              "description":"a wedding ceremony, a wedding",
              "romaji":"kyoshiki",
              "hiragana": "きょしき",
@@ -28,5 +28,187 @@
              }]
 
      },
+     {
+             "kanji":"湯",
+             "description":"a wedding ceremony, a wedding",
+             "romaji":"kyoshiki",
+             "hiragana": "きょしき",
+             "Example" : [{
+                "text": "挙式はいつですか",
+                "translate": "When is your wedding ceremony?"
+             },{
+                "text": "教会で挙式の予定です",
+                "translate": "Our wedding will be held in church."
+             }]
+
+     },
+     {
+             "kanji":"事",
+             "description":"a wedding ceremony, a wedding",
+             "romaji":"kyoshiki",
+             "hiragana": "きょしき",
+             "Example" : [{
+                "text": "挙式はいつですか",
+                "translate": "When is your wedding ceremony?"
+             },{
+                "text": "教会で挙式の予定です",
+                "translate": "Our wedding will be held in church."
+             }]
+
+     },
+     {
+             "kanji":"中",
+             "description":"a wedding ceremony, a wedding",
+             "romaji":"kyoshiki",
+             "hiragana": "きょしき",
+             "Example" : [{
+                "text": "挙式はいつですか",
+                "translate": "When is your wedding ceremony?"
+             },{
+                "text": "教会で挙式の予定です",
+                "translate": "Our wedding will be held in church."
+             }]
+
+     },
+     {
+             "kanji":"幸",
+             "description":"a wedding ceremony, a wedding",
+             "romaji":"kyoshiki",
+             "hiragana": "きょしき",
+             "Example" : [{
+                "text": "挙式はいつですか",
+                "translate": "When is your wedding ceremony?"
+             },{
+                "text": "教会で挙式の予定です",
+                "translate": "Our wedding will be held in church."
+             }]
+
+     },
+     {
+             "kanji":"寒",
+             "description":"a wedding ceremony, a wedding",
+             "romaji":"kyoshiki",
+             "hiragana": "きょしき",
+             "Example" : [{
+                "text": "挙式はいつですか",
+                "translate": "When is your wedding ceremony?"
+             },{
+                "text": "教会で挙式の予定です",
+                "translate": "Our wedding will be held in church."
+             }]
+
+     },
+     {
+             "kanji":"野",
+             "description":"a wedding ceremony, a wedding",
+             "romaji":"kyoshiki",
+             "hiragana": "きょしき",
+             "Example" : [{
+                "text": "挙式はいつですか",
+                "translate": "When is your wedding ceremony?"
+             },{
+                "text": "教会で挙式の予定です",
+                "translate": "Our wedding will be held in church."
+             }]
+
+     },
+     {
+             "kanji":"都",
+             "description":"a wedding ceremony, a wedding",
+             "romaji":"kyoshiki",
+             "hiragana": "きょしき",
+             "Example" : [{
+                "text": "挙式はいつですか",
+                "translate": "When is your wedding ceremony?"
+             },{
+                "text": "教会で挙式の予定です",
+                "translate": "Our wedding will be held in church."
+             }]
+
+     },
+     {
+             "kanji":"話",
+             "description":"a wedding ceremony, a wedding",
+             "romaji":"kyoshiki",
+             "hiragana": "きょしき",
+             "Example" : [{
+                "text": "挙式はいつですか",
+                "translate": "When is your wedding ceremony?"
+             },{
+                "text": "教会で挙式の予定です",
+                "translate": "Our wedding will be held in church."
+             }]
+
+     },
+     {
+             "kanji":"区",
+             "description":"a wedding ceremony, a wedding",
+             "romaji":"kyoshiki",
+             "hiragana": "きょしき",
+             "Example" : [{
+                "text": "挙式はいつですか",
+                "translate": "When is your wedding ceremony?"
+             },{
+                "text": "教会で挙式の予定です",
+                "translate": "Our wedding will be held in church."
+             }]
+
+     },
+     {
+             "kanji":"煮",
+             "description":"a wedding ceremony, a wedding",
+             "romaji":"kyoshiki",
+             "hiragana": "きょしき",
+             "Example" : [{
+                "text": "挙式はいつですか",
+                "translate": "When is your wedding ceremony?"
+             },{
+                "text": "教会で挙式の予定です",
+                "translate": "Our wedding will be held in church."
+             }]
+
+     },
+     {
+             "kanji":"線",
+             "description":"a wedding ceremony, a wedding",
+             "romaji":"kyoshiki",
+             "hiragana": "きょしき",
+             "Example" : [{
+                "text": "挙式はいつですか",
+                "translate": "When is your wedding ceremony?"
+             },{
+                "text": "教会で挙式の予定です",
+                "translate": "Our wedding will be held in church."
+             }]
+
+     },
+     {
+             "kanji":"凄",
+             "description":"a wedding ceremony, a wedding",
+             "romaji":"kyoshiki",
+             "hiragana": "きょしき",
+             "Example" : [{
+                "text": "挙式はいつですか",
+                "translate": "When is your wedding ceremony?"
+             },{
+                "text": "教会で挙式の予定です",
+                "translate": "Our wedding will be held in church."
+             }]
+
+     },
+     {
+             "kanji":"差",
+             "description":"a wedding ceremony, a wedding",
+             "romaji":"kyoshiki",
+             "hiragana": "きょしき",
+             "Example" : [{
+                "text": "挙式はいつですか",
+                "translate": "When is your wedding ceremony?"
+             },{
+                "text": "教会で挙式の予定です",
+                "translate": "Our wedding will be held in church."
+             }]
+
+     }
 
 ]
