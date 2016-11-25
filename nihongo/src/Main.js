@@ -51,9 +51,13 @@ const KANJI_LIST = [
 const scenes = Actions.create(
   <Scene key="root">
     <Scene key="home" component={Home} title="React de Nihongo" initial={true} />
+
     <Scene key="kanji" component={Kanji} />
     <Scene key="flash" component={FlashCard} title="Flash Card" dataSource={KANJI_LIST} />
 
+
+    <Scene key="kanji" component={Kanji} title="Reactで「日本語」"/>
+    <Scene key="flash" component={FlashCard} title="Flash Card" />
 
   </Scene>
 );
