@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
 		fontSize: 20
 	},
 	kanjiBox: {
-		marginTop: 50,
+		marginTop: 60,
 		height: 300,
 		backgroundColor: 'yellow',
 		justifyContent: 'center',
@@ -60,8 +60,11 @@ const styles = StyleSheet.create({
 		paddingLeft: 20,
 		height: 100,
 		justifyContent: 'center',
-		backgroundColor: 'blue',
-		alignItems: 'center'
+		backgroundColor: 'red',
+		alignItems: 'center',
+		margin: 1
+
+
 	},
 	nextButton: {
 		flex: 1,
@@ -69,7 +72,13 @@ const styles = StyleSheet.create({
 		height: 100,
 		alignItems: 'center',
 		justifyContent: 'center',
-		backgroundColor: 'pink'
+		backgroundColor: 'green',
+		margin: 1,
+	},
+
+	buttonText: {
+		color: 'white',
+		fontSize: 20
 	},
 	// card opened
 	cardTitle: {
@@ -287,11 +296,11 @@ export default class FlashCard extends Component {
 				<View style={styles.bottomBar}>
 					<TouchableHighlight style={styles.backButton}
 						onPress={this.back.bind(this)}	>
-						<Text>Trở lại</Text>
+						<Text style={styles.buttonText}>Trở lại</Text>
 					</TouchableHighlight>
 					<TouchableHighlight style={styles.nextButton}
 						onPress={this.next.bind(this)}	>
-						<Text>Tiếp</Text>
+						<Text style={styles.buttonText}>Tiếp</Text>
 					</TouchableHighlight>
 				</View>
 			</View>
