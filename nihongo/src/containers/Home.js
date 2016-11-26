@@ -86,7 +86,7 @@ export default class Home extends Component {
 							style={styles.button}
 							onPress={ Actions.kanji }>
 						<Text>
-							Cài đặt
+							About Us
 						</Text>
 					</TouchableHighlight>
 				</View>

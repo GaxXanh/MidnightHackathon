@@ -12,7 +12,7 @@
                 "text": "教会で挙式の予定です",
                 "translate": "Our wedding will be held in church."
              }],
-             "favorite": false
+             "favorite": true
 
      },
      {
@@ -41,7 +41,7 @@
                 "text": "教会で挙式の予定です",
                 "translate": "Our wedding will be held in church."
              }],
-             "favorite": false
+             "favorite": true
      },
      {
              "kanji":"事",

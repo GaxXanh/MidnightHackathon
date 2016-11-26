@@ -43,8 +43,17 @@ const styles = StyleSheet.create({
 	}
 });
 
+const KANJI_LIST = require('../service/content.json');
 
 export default class Kanji extends Component {
+
+	getFavoriteKanjis() {
+		console.log("TESTTTTT");
+		return KANJI_LIST.filter((kanji) => {
+			return kanji.favorite == true
+		});
+	}
+
 	render() {
 		return (
 			<View style={ styles.container }>
@@ -86,7 +95,7 @@ export default class Kanji extends Component {
 					<TouchableHighlight
 						underlayColor='#FAB3C8'
 						style={styles.button}
-						onPress={ Actions.flash }>
+						onPress={ ()=>Actions.flash({dataSource: this.getFavoriteKanjis()}) }>
 						<Text>
 							Kanji chọn lọc
 						</Text>
