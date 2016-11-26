@@ -5,7 +5,8 @@ import {
 	View,
 	StyleSheet,
 	TouchableHighlight,
-	AlertIOS
+	AlertIOS,
+	Button
 } from 'react-native';
 
 import { Actions } from 'react-native-router-flux';
@@ -94,11 +95,19 @@ export default class FlashCard extends Component {
 		this.state = {
 			kanji: {},
 			flip: false,
-			examples: []
+			examples: [],
+			favorite: false
 		}
 
 		this.current = -1;
 
+	}
+
+	setFavorite() {
+		this.props.dataSource[this.current].favorite = !this.props.dataSource[this.current].favorite;
+		this.setState({
+			favorite: !this.state.favorite
+		})
 	}
 
 	next() {
@@ -121,7 +130,8 @@ export default class FlashCard extends Component {
 		this.setState({
 			kanji: this.props.dataSource[++this.current],
 			flip: false,
-			examples: this.props.dataSource[this.current].Example
+			examples: this.props.dataSource[this.current].Example,
+			favorite: this.props.dataSource[this.current].favorite
 		});
 
 	}
@@ -135,7 +145,8 @@ export default class FlashCard extends Component {
 		this.setState({
 			kanji: this.props.dataSource[--this.current],
 			flip: false,
-			examples: this.props.dataSource[this.current].Example
+			examples: this.props.dataSource[this.current].Example,
+			favorite: this.props.dataSource[this.current].favorite
 		});
 	}
 
@@ -280,10 +291,12 @@ export default class FlashCard extends Component {
 						Câu số {this.current + 1} / {this.props.dataSource.length}
 					</Text>
 				</View>
-
-					{this.renderCard()}
-
-
+				{this.renderCard()}
+				<Button
+					color="pink"
+					onPress={this.setFavorite.bind(this)}
+					title={this.state.favorite ? 'Remove favorite' : 'Add Favorite'}
+				/>
 				<View style={styles.bottomBar}>
 					<TouchableHighlight style={styles.backButton}
 						onPress={this.back.bind(this)}	>
